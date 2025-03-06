@@ -1,0 +1,98 @@
+﻿<Page x:Class="driveCom.Carlist"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:driveCom"
+      mc:Ignorable="d"
+      Height="720"
+      Width="1080"
+     
+      Title="Carlist">
+
+    <Border Background="White"
+            Padding="30"
+            CornerRadius="25"
+            MouseDown="Border_MouseDown"
+            MouseLeftButtonDown="Border_MouseDown">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Border CornerRadius="10"
+                    Background="Blue">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="1"
+                                      BlurRadius="20"
+                                      Opacity="0.4" />
+                </Border.Effect>
+                <Grid>
+                    <StackPanel>
+                        <Button Style="{StaticResource menuButton}"
+                                Margin="15 40 15 50"
+                                Background="White">
+                            <Image Source="/Images/home.png"
+                                   Width="20" />
+                        </Button>
+                        <Button Style="{StaticResource menuButton}"
+                                Margin="15 40 15 50"
+                                Background="White">
+                            <Image Source="/Images/graph.png"
+                                   Width="20" />
+                        </Button>
+                        <Button Style="{StaticResource menuButton}"
+                                Margin="15 40 15 50"
+                                Background="White">
+                            <Image Source="/Images/car.png"
+                                   Width="20" />
+                        </Button>
+                        <Button Style="{StaticResource menuButton}"
+                                Margin="15 40 15 50"
+                                Background="White">
+                            <Image Source="/Images/news.png"
+                                   Width="20" />
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border x:Name="HomePage"
+                    Style="{StaticResource borderPage}">
+                <Border.RenderTransform>
+                    <TranslateTransform Y="0" />
+                </Border.RenderTransform>
+                <Border CornerRadius="25">
+                    <Border.Background>
+                        <ImageBrush Stretch="Fill"
+                                    Opacity="0.6"
+                                    ImageSource="/Images/image_1.jpg" />
+                    </Border.Background>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+
+
+                        </Grid.ColumnDefinitions>
+                        <StackPanel VerticalAlignment="Center"
+                                    Margin=" 60 0 0 0">
+                            <TextBlock Text="Controlling"
+                                       Foreground="White"></TextBlock>
+
+
+                        </StackPanel>
+
+                    </Grid>
+                </Border>
+            </Border>
+        </Grid>
+
+
+
+    </Border>
+
+
+</Page>

@@ -1,0 +1,250 @@
+﻿<Window x:Class="driveCom.Car_list"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:driveCom"
+        mc:Ignorable="d"
+        Height="1587"
+        Width="2245"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        WindowStyle="SingleBorderWindow"
+        AllowsTransparency="False"
+        WindowState="Maximized"
+        
+        Name="window">
+
+    <Border Background="White"
+            Padding="30"
+            CornerRadius="0"
+            MouseDown="Border_MouseDown"
+            MouseLeftButtonDown="Border_MouseDown">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Sidebar -->
+            <Border CornerRadius="10"
+                    Background="Black"
+                    Grid.Column="0"
+                    Grid.RowSpan="2">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="1"
+                                      BlurRadius="20"
+                                      Opacity="0.4" />
+                </Border.Effect>
+                <StackPanel VerticalAlignment="Center">
+                    <Button Style="{StaticResource menuButton}"
+                            Margin="15 40 15 50"
+                            Background="White"
+                            Click="Homebutton_click">
+                        <Image Source="/Images/home.png"
+                               Width="20" />
+                    </Button>
+                    <Button Style="{StaticResource menuButton}"
+                            Margin="15 40 15 50"
+                            Background="White"
+                            Click="admin_d">
+                        <Image Source="/Images/graph.png"
+                               Width="20" />
+                    </Button>
+                    <Button Style="{StaticResource menuButton}"
+                            Margin="15 40 15 50"
+                            Background="Yellow"
+                            >
+                        <Image Source="/Images/car.png"
+                               Width="20" />
+                    </Button>
+                    <Button Style="{StaticResource menuButton}"
+                            Margin="15 40 15 50"
+                            Background="White"
+                            Click="news">
+                        <Image Source="/Images/news.png"
+                               Width="20" />
+                    </Button>
+                </StackPanel>
+            </Border>
+
+            <!-- Main Content -->
+            <Grid Grid.Column="1"
+                  Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- Search Section -->
+                <Grid Margin="50 25 35 20"
+                      Grid.Row="0">
+                    
+                        <StackPanel Orientation="Horizontal">
+                           
+                            <TextBox x:Name="txtSearch"
+                                     VerticalContentAlignment="Center"
+                                     Width="200"
+                                     Height="20"
+                                     Margin="5,0,0,0"
+                                     HorizontalAlignment="Left" />
+
+
+                            <Button Content="Search"
+                                    Width="80"
+                                    Margin="5,0,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Click="Search_Button" />
+                        <TextBlock FontSize="40"
+                                   
+                                   HorizontalAlignment="Center"
+                                   Margin="400 0"
+                                   FontWeight="Bold"
+                                   >CarDeals</TextBlock>
+
+
+                    </StackPanel>
+                    
+                    
+                    
+                </Grid>
+
+                <!-- Scrollable Content Section -->
+                <ScrollViewer Grid.Row="1"
+                              VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled"
+                              Margin="50 0 35 20">
+                    <WrapPanel Orientation="Horizontal"
+                               HorizontalAlignment="Left">
+                       
+
+                        <local:carpost CarName="Honda Fit GP5"
+                                       Year="2018"
+                                       Price="Rs. 7,000,000"
+                                       Mileage="7M"
+                                       ImageSource="https://autostore.nyc3.cdn.digitaloceanspaces.com/11861_0.jpg"
+                                        />
+
+                        <local:carpost CarName="Toyota Axio Company Maintained"
+                                       Year="2017"
+                                       Price="Rs. 13,500,000"
+                                       Mileage="13.5M"
+                                       ImageSource="https://www.houseofcars.co.ke/hoc-images/2023/12/WhatsApp-Image-2023-12-14-at-04.52.41.jpeg" />
+
+                     
+
+                        <local:carpost CarName="Suzuki Wagon R Stingray J Style"
+                                       Year="2015"
+                                       Price="Rs. 6,000,000"
+                                       Mileage="99,000 KM"
+                                       ImageSource="https://riyasewana.com/uploads/suzuki-wagon-r-2015-158332612611.jpg" />
+
+                        <local:carpost CarName="Toyota Aqua G Grade"
+                                       Year="2013"
+                                       Price="Rs. 7,325,000"
+                                       Mileage="85,000 KM"
+                                       ImageSource="https://riyasewana.com/uploads/toyota-aqua-g-15819524671.jpg" />
+
+                        <local:carpost CarName="Suzuki Swift Rs Turbo"
+                                       Year="2019"
+                                       Price="Rs. 9,275,000"
+                                       Mileage="84,000 KM"
+                                       ImageSource="https://riyasewana.com/uploads/suzuki-swift-rs-2019-158123912172.jpg" />
+
+                        <local:carpost CarName="Toyota PREMIO NZT260 G SUPERIOR"
+                                       Year="2019"
+                                       Price="Rs. 18,750,000"
+                                       Mileage="38,500 KM"
+                                       ImageSource="https://riyasewana.com/uploads/toyota-premio-nzt260-15817424253.jpg" />
+
+                        <local:carpost CarName="Mercedes-Benz E350e"
+                                       Year="2017"
+                                       Price="Rs. 36,000,000"
+                                       Mileage="64,256 KM"
+                                       ImageSource="https://riyasewana.com/uploads/mercedes-benz-e350e-15152324301.jpg" />
+
+                        <local:carpost CarName="Suzuki Wagon R Stingray"
+                                       Year="2018"
+                                       Price="Rs. 6,500,000"
+                                       Mileage="67,000 KM"
+                                       ImageSource="https://siyaluma.lk/storage/products/1598597156_whatsapp-image-2020-08-28-at-11.29.14-am.jpeg" />
+
+            
+
+                        <local:carpost CarName="KUV 100 NXT"
+                                       Year="2021"
+                                       Price="Rs. 5,500,000"
+                                       Mileage="28,400 KM"
+                                       ImageSource="https://riyasewana.com/uploads/mahindra-kuv-100-15160447381.jpg" />
+
+                        <local:carpost CarName="Suzuki Celerio Zxi"
+                                       Year="2016"
+                                       Price="Rs. 4,250,000"
+                                       Mileage="28,400 KM"
+                                       ImageSource="https://riyasewana.com/uploads/suzuki-celario-zxi-151428504861.jpg" />
+
+                        <local:carpost CarName="Suzuki EVERY JOIN"
+                                       Year="2015"
+                                       Price="Rs. 4,250,000"
+                                       Mileage="111,000 KM"
+                                       ImageSource="https://riyasewana.com/uploads/suzuki-every-join-15124049601.jpg" />
+
+                        <local:carpost CarName="Suzuki Alto 800 LXI"
+                                       Year="2016"
+                                       Price="Rs. 3,375,000"
+                                       Mileage="124,000 KM"
+                                       ImageSource="https://riyasewana.com/uploads/suzuki-alto-lxi-2016-1512490512981.jpg" />
+
+                        <local:carpost CarName="Suzuki HUSTLER"
+                                       Year="2015"
+                                       Price="Rs. 5,975,000"
+                                       Mileage="85,000 KM"
+                                       ImageSource="https://riyasewana.com/uploads/suzuki-hustler-2015-157383012642.jpg" />
+                        <local:carpost CarName="Honda Vezel RS Sensing"
+                                       Year="2017"
+                                       Price="Rs 14,200,000"
+                                       Mileage="120,000 km"
+                                       ImageSource="https://i.ikman-st.com/honda-vezel-rs-sensing-2017-for-sale-colombo-2441/ce08b94a-1138-4b27-b825-65ddcacfcbbf/620/466/fitted.jpg" />
+                        <local:carpost CarName="Toyota Vitz Safety"
+                                       Year="2016"
+                                       Price="Rs 7,590,000"
+                                       Mileage="143,000 km"
+                                       ImageSource="https://i.ikman-st.com/toyota-vitz-safety-2016-for-sale-colombo-821/2f6a9d05-d450-462b-af48-0edfcb2cb0a7/620/466/fitted.jpg" />
+                        <local:carpost CarName="BMW 523i 5 series"
+                                       Year="2024"
+                                       Price="Rs 43,000,000"
+                                       Mileage="2,000 km"
+                                       ImageSource="https://cdn1.oto.my/upload/image/2018/09/25/207197/s7-20180925114348-5448-8690.jpg" />
+                        <ItemsControl ItemsSource="{Binding}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Horizontal"
+                                               HorizontalAlignment="Left" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <local:carpost CarName="{Binding CarName}"
+                                                   Year="{Binding Year}"
+                                                   Price="{Binding Price}"
+                                                   Mileage="{Binding Mileage}"
+                                                   ImageSource="{Binding ImageSource}" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+
+
+
+                    </WrapPanel>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
